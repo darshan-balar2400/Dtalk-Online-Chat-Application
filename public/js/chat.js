@@ -25,7 +25,7 @@ const autoScroll = () => {
 }
 
 const openChatAside = () => {
-    chat__aside_small_size.style.width = "40%";
+    chat__aside_small_size.style.width = "60%";
 }
 
 const closeChatAside = () => {
