@@ -19,9 +19,9 @@ const username = queryData.get("name");
 let room = queryData.get('room');
 let activeRoom = queryData.get("activeRoom");
 
-
 const autoScroll = () => {
-   
+    
+    messages.scrollTop = messages.scrollHeight;
 }
 
 const openChatAside = () => {
