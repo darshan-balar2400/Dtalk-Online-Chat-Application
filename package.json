@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "node-sass": "sass --watch public/css/index.scss public/css/index.css"
+    "node-sass": "sass --watch public/css/index.scss public/css/index.css --style compressed"
   },
   "keywords": [],
   "author": "",
