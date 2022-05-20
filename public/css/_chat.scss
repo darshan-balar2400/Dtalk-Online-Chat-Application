@@ -120,10 +120,8 @@
 // chat_container
 .chat__container {
     width: 100vw;
-    min-height: 100vh;
-    max-height: 100vh;
+    height: 100vh;
     display: flex;
-    border:1px solid black;
 
     .closeChatAside {
         display: none;
@@ -149,14 +147,24 @@
 
         @media (max-width:768px) {
             display: none;
+            width: 30%;
+            background-color: #303949;
+            padding: 0.5rem;
+
+            .title {
+                font-size: 1.5rem;
+            }
+
+            .users ul li {
+                font-size: 1.3rem;
+            }
         }
     }
 
     .chat__content {
         width: 100%;
-        height: 100vh;
+        height: 100%;
         background: #F7F7F7;
-        border:1px solid black;
 
         .chat__messages {
             width: 100%;
@@ -225,15 +233,13 @@
                 border-top-left-radius: 0rem;
             }
 
-
         }
 
         .chat__sendMessage {
             width: 100%;
             height: 10%;
             position: fixed;
-            bottom: 0;
-            
+            bottom:0;
             form {
                 display: flex;
 
@@ -251,11 +257,9 @@
 
                 .attachement {
                     font-size: 3rem;
-                    // border:1px solid black;
                     color: gray;
                     cursor: pointer;
                     @include center.center("both");
-
                 }
             }
 

@@ -21,7 +21,7 @@
             align-items: center;
 
             .intro_title {
-                width: 100%;
+                width: 60%;
 
                 h1 {
                     font-family: 'Viga', sans-serif;
@@ -38,10 +38,15 @@
                     display: block;
                     // font-weight: ;
                 }
+
+                @media (max-width:768px){
+                    width:100%;
+                }
             }
 
             .intro_form {
-                width: 100%;
+
+                width: 60%;
                 // border:1px solid black;
                 margin-top: 2rem;
 
@@ -55,6 +60,10 @@
 
                 select {
                     @extend .input;
+                }
+
+                @media (max-width:768px){
+                    width:100%;
                 }
 
                 .divider {
