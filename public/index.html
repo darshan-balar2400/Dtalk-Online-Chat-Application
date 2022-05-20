@@ -1,0 +1,57 @@
+<!-- chat application intro page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/index.css" rel="stylesheet">
+    <title>Chat Application</title>
+</head>
+<body>
+    <div class="intro_container">
+        <div class="intro_content intro_row">
+            <div class="intro_col">
+                <div class="intro_title">
+                    <h1>DTalk</h1>
+                    <div class="border"></div>
+                    <span>Let's Start Chating With Your Friends</span>
+                </div>
+                <div class="intro_form">
+                    <form action="chat.html" autocomplete="false" method="GET" id="introForm">
+                        <input type="text" name="name" placeholder="Name" autofocus required>
+                        <input type="text" name="room" placeholder="Room Name" >
+                        <div class="divider">
+                        </div>
+                        <select class="allActiveRooms" name="activeRoom">
+                            <option>-- Select Active Room --</option>
+                        </select>
+                        <button>Join</button>
+                    </form>
+                </div>
+                
+            </div>
+            <div class="intro_col">
+                <img src="images/logo.png" alt="logo">
+            </div>
+        </div>
+    </div>
+
+
+    <script id="rooms_template" type="text/html">
+        {{#rooms}}
+          <option>{{.}}</option>
+        {{/rooms}}
+    </script>
+
+    <script src="socket.io/socket.io.js"></script>
+    <script src="js/getRooms.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+</body>
+</html>

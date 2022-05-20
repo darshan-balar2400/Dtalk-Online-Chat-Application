@@ -1,0 +1,24 @@
+@import "_chat.scss";
+@import "_intro.scss";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Pacifico&family=Quicksand&family=Viga&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #F7F7F7;
+}

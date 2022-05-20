@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/index.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="chat__aside_small_size">
+    </div>
+    <div class="chat__container">
+        <button class="openChatAside" onclick="openChatAside();"><ion-icon name="chevron-forward-outline"></ion-icon></button>
+        <div class="chat__aside">
+        </div>
+        <div class="chat__content">
+            <div class="chat__messages">
+            </div>
+            <div class="chat__sendMessage">
+                <form id="submitMessage">
+                    <input type="text" name="sendMessage" class="sendMessageInput" placeholder="Send Message" required autocomplete="off">
+                    <span class="attachement"><ion-icon name="attach-outline"></ion-icon></span>
+                    <button>Send</button>
+                </form>
+
+                <div class="options">
+                    <span id="sendLocation"><ion-icon name="location-outline"></ion-icon> Send Location</span>
+                    <span><ion-icon name="image-outline"></ion-icon> Image</span>
+                    <span><ion-icon name="document-text-outline"></ion-icon>Document</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/html" id="message_template">
+        <div class="msg {{class}}">
+            <div class="title">
+                <span>{{username}}</span>
+                <span class="time">{{createdAt}}</span>
+            </div>
+            <div class="border"></div>
+            <div class="body">{{message}}</div>
+        </div>
+    </script>
+
+
+    <script type="text/html" id="location_template">
+        <div class="msg {{class}}">
+            <div class="title">
+                <span>{{username}}</span>
+                <span class="time">{{createdAt}}</span>
+            </div>
+            <div class="border"></div>
+            <div class="body">
+                <!-- <iframe src="{{message}}" width="300" height="300"></iframe> -->
+                <a href="{{message}}" target="_blank">
+                  <span><ion-icon name="pin-outline"></ion-icon></span>  My Current Location</a>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/html" id="users_template">
+        <button class="closeChatAside" onclick="closeChatAside();"><ion-icon name="chevron-back-outline"></ion-icon></button>
+        <div class="title">
+            {{title}}
+        </div>
+        <div class="users">
+            <ul>
+               {{#users}}
+                    <li>{{username}}</li>
+               {{/users}}
+            </ul>
+        </div>
+    </script>
+
+    <script src="socket.io/socket.io.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(function(){
+            $(".attachement").click(function(){
+                $(".options").slideToggle(500);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,308 @@
+@use "_uses";
+@use "_center";
+
+.input {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid lightgray;
+    outline: none;
+    margin: 1rem 0rem 0rem 0rem;
+}
+
+.border {
+    width: 15%;
+    padding: 0.4rem;
+    background-color: uses.$main_color;
+    justify-self: flex-start;
+}
+
+.button {
+    outline: none;
+    border: none;
+    width: 9rem;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    // font-size:1rem;
+    color: black;
+    border: 1px solid lightgray;
+    background-color: #EFEFEF;
+    cursor: pointer;
+    border-radius: 0.3rem;
+}
+
+
+.chat_aside_title {
+    // display: none;
+    width: 100%;
+    height: auto;
+    padding: 3rem 2rem;
+    font-size: 2rem;
+    color: #EFEFEF;
+    // margin-top: 1rem;
+    background-color: #3E445A;
+}
+
+.chat_aside_users {
+
+    // display: none;
+    // padding:2rem;
+    // margin-top: 1rem;
+    ul li {
+        width: 100%;
+        list-style-type: none;
+        color: #EFEFEF;
+        font-size: 1.5rem;
+        padding: 1rem 1rem 1rem 2rem;
+        margin-top: 0.5rem;
+        transition: all 0.4s;
+
+
+        &:hover {
+            background-color: #F7F7F7;
+            cursor: pointer;
+            color: uses.$main_color;
+            // font-size:1.8rem;
+        }
+    }
+}
+
+.open_and_close_chat_aside {
+    visibility: hidden;
+    width: auto;
+    height: 10rem;
+    background-color: white;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    @include center.center("both");
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    @media (max-width:768px) {
+        visibility: visible;
+    }
+}
+
+.chat__aside_small_size {
+    // display: none;
+    overflow: hidden;
+    width: 0%;
+    height: 100vh;
+    background-color: white;
+    // padding:1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #303949;
+    transition: all 0.4s;
+
+    .closeChatAside {
+        @extend .open_and_close_chat_aside;
+        right: 0;
+    }
+
+    .title {
+        @extend .chat_aside_title;
+    }
+
+    .users {
+
+        @extend .chat_aside_users;
+    }
+}
+
+// chat_container
+.chat__container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+
+    .closeChatAside {
+        display: none;
+    }
+
+    .openChatAside {
+        @extend .open_and_close_chat_aside;
+        left: 0;
+    }
+
+    .chat__aside {
+        width: 20%;
+        height: 100%;
+        background: #303949;
+
+        .title {
+            @extend .chat_aside_title;
+        }
+
+        .users {
+            @extend .chat_aside_users;
+        }
+
+        @media (max-width:768px) {
+            display: none;
+            width: 30%;
+            background-color: #303949;
+            padding: 0.5rem;
+
+            .title {
+                font-size: 1.5rem;
+            }
+
+            .users ul li {
+                font-size: 1.3rem;
+            }
+        }
+    }
+
+    .chat__content {
+        width: 100%;
+        height: 100%;
+        background: #F7F7F7;
+
+        .chat__messages {
+            width: 100%;
+            height: 90%;
+            padding: 2rem;
+            overflow: auto;
+
+            .msg {
+                width: max-content;
+                overflow: hidden;
+                max-width: 30rem;
+                background-color: #EFEFEF;
+                //   border:1px solid black;
+                border-radius: 0.5rem;
+                padding: 1rem;
+                margin: 1rem 0rem 0rem 0rem;
+
+                .title {
+                    font-weight: bold;
+                    font-size: 1.5rem;
+
+                    span {
+                        margin-right: 1rem;
+                    }
+
+                    .time {
+                        color: gray;
+                    }
+                }
+
+                .border {
+                    padding: 0.3rem;
+                    margin-top: 1rem;
+                    margin-bottom: 1rem;
+                    @extend .border;
+                }
+
+                .body {
+                    font-size: 1.5rem;
+                    padding-top: 0.6rem;
+                    margin: 1rem 0rem 1rem 0rem;
+
+                    a {
+                        // background-color: #F7F7F7;
+                        color: #303949;
+                        padding: 1rem;
+                        border-radius: 0.5rem;
+                        // text-decoration: none;
+                        margin-top: 1rem;
+
+                        &:hover {
+                            background-color: uses.$main_color;
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+            .sended_message {
+                margin: 1rem 0rem 0rem auto;
+                border-top-right-radius: 0rem;
+            }
+
+            .received_message {
+                margin: 1rem auto 0rem 0rem;
+                border-top-left-radius: 0rem;
+            }
+
+
+        }
+
+        .chat__sendMessage {
+            width: 100%;
+            height: 10%;
+            position: relative;
+
+            //   border:1px solid black;
+            form {
+                display: flex;
+
+                input {
+                    @extend .input;
+                    margin: 1rem;
+                }
+
+                button {
+                    @extend .button;
+                    background-color: uses.$main_color;
+                    color: white;
+                    margin: 1rem 1rem 1rem 0.5rem;
+                }
+
+                .attachement {
+                    font-size: 3rem;
+                    // border:1px solid black;
+                    color: gray;
+                    cursor: pointer;
+                    @include center.center("both");
+
+                }
+            }
+
+            .options {
+                display: none;
+                width: auto;
+                position: absolute;
+                bottom: 100%;
+                left: 90%;
+                background-color: white;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+                // padding:1rem;
+                border-radius: 0.7rem;
+                font-size: 1.4rem;
+                z-index: 1;
+                // transition: all 0.5s;
+
+                span {
+                    display: block;
+                    padding: 1rem;
+                    transition: all 0.4s;
+                    cursor: pointer;
+                    @include center.center('vr');
+
+                    ion-icon {
+                        margin-right: 0.8rem;
+                    }
+
+                    // margin-bottom: 1rem;
+                    &:hover {
+                        background-color: #EFEFEF;
+                    }
+                }
+
+                @media (max-width:768px) {
+                    left: 60%;
+                }
+            }
+
+        }
+    }
+}

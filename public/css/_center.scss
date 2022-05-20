@@ -1,0 +1,17 @@
+// center
+@mixin center($side) {
+    display: flex;
+
+    @if($side =="hr") {
+        justify-content: center;
+    }
+
+    @else if($side =="vr") {
+        align-items: center;
+    }
+
+    @else {
+        justify-content: center;
+        align-items: center;
+    }
+}

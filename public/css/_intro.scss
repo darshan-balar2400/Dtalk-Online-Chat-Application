@@ -1,0 +1,107 @@
+@use "_center";
+// intro_container
+.intro_container {
+    width: 80%;
+    height: 80vh;
+    padding: 2rem;
+    margin: auto;
+
+    .intro_content {
+        width: 100%;
+        height: 100%;
+        @include center.center('both');
+
+        .intro_col {
+            width: 45%;
+            height: 60%;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            // border:1px solid black;
+
+            .intro_title {
+                width: 60%;
+
+                h1 {
+                    font-family: 'Viga', sans-serif;
+                    font-size: 7rem;
+                }
+
+                .border {
+                    @extend .border;
+                }
+
+                span {
+                    font-size: 1.5rem;
+                    margin-top: 1rem;
+                    display: block;
+                    // font-weight: ;
+                }
+            }
+
+            .intro_form {
+                width: 60%;
+                // border:1px solid black;
+                margin-top: 2rem;
+
+                input {
+                    @extend .input;
+                }
+
+                button {
+                    @extend .button;
+                }
+
+                select {
+                    @extend .input;
+                }
+
+                .divider {
+                    padding: 0.1rem;
+                    background-color: #EFEFEF;
+                    margin: 3rem 0rem 3rem 0rem;
+                    position: relative;
+
+                    &::after {
+                        width: 2rem;
+                        height: 2rem;
+                        content: "Or";
+                        position: absolute;
+                        bottom: 50%;
+                        left: calc(50% - 1rem);
+                        // margin:auto;
+                        color: white;
+                        transform: translateY(50%);
+                        font-size: 1rem;
+                        background-color: #FF6636;
+                        border-radius: 50%;
+                        padding: 0.4rem;
+                        @include center.center('both');
+                        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                        // font-family: ;
+                    }
+
+                }
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            @media(max-width:768px) {
+                &:nth-child(2) {
+                    display: none;
+                }
+
+                width:100%;
+            }
+        }
+    }
+
+    @media (max-width:768px) {
+        width: 100%;
+    }
+}
