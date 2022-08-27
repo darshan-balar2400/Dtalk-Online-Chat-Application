@@ -30,6 +30,7 @@
 * HTML
 * CSS
 * JS
+* SCSS
 * BOOTSTRAP
 * NODE JS
 * EXPRESS
