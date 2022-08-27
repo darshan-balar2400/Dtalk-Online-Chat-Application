@@ -11,7 +11,7 @@
   <h3 align="center">DTALK</h3>
 
   <p align="center">
-    A Online Chat Webiste
+    A Online Chat Website
     <br />
   </p>
   <a href="https://real-time-chat-balar.herokuapp.com/">View Demo</a>
