@@ -18,12 +18,9 @@
 </div>
 
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ABOUT THE PROJECT -->
 ## Project ScreenShot
 
 <img src="https://res.cloudinary.com/dexratgkq/image/upload/v1661598778/samples/ss1_nnylvj.png">
@@ -47,7 +44,7 @@
 
 Your Name - Darshan Balar - balardarshan40@gmail.com
 
-Project Link: (https://github.com/darshan-balar2400/dtalk ( Online Chat Application) )
+Project Link: (https://github.com/darshan-balar2400/Dtalk-Online-Chat-Application
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
