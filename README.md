@@ -5,48 +5,40 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="https://res.cloudinary.com/dexratgkq/image/upload/v1661593895/samples/Logo_waogqu.png" alt="Logo" width="80" height="80">
+    <img src="https://res.cloudinary.com/dexratgkq/image/upload/v1661598630/samples/dtalk_pxnxwh.png" alt="Logo" width="190" height="100">
   </a>
 
-  <h3 align="center">MAD OVER GRILLS</h3>
+  <h3 align="center">DTALK</h3>
 
   <p align="center">
-    A Restaurant Website
+    A Online Chat Webiste
     <br />
   </p>
-  <a href="">View Demo</a>
+  <a href="https://real-time-chat-balar.herokuapp.com/">View Demo</a>
 </div>
 
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-It is an online booking table,seeing menu,etc.. of resturant. We provides some online fecilities like the following to the any user
-
-- user can pre book the table for specified date and time,
-- user can see online menu of resturant, 
-- user can gives feedback,
-- user can contact us for asking any questions
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ABOUT THE PROJECT -->
 ## Project ScreenShot
 
-<img src="https://res.cloudinary.com/dexratgkq/image/upload/v1661595554/samples/index_output_d7mrpv.png">
-
+<img src="https://res.cloudinary.com/dexratgkq/image/upload/v1661598778/samples/ss1_nnylvj.png">
+<img src="https://res.cloudinary.com/dexratgkq/image/upload/v1661598872/samples/ss2_yznoes.png">
 ### Built With
 
 * HTML
 * CSS
 * JS
 * BOOTSTRAP
-* PHP
-* MYSQL
+* NODE JS
+* EXPRESS
+* HANDLEBARS (HBS)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 
 
@@ -55,7 +47,7 @@ It is an online booking table,seeing menu,etc.. of resturant. We provides some o
 
 Your Name - Darshan Balar - balardarshan40@gmail.com
 
-Project Link: (https://github.com/darshan-balar2400/madovergrills)
+Project Link: (https://github.com/darshan-balar2400/dtalk ( Online Chat Application) )
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
