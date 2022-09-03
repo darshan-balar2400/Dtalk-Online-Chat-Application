@@ -34,7 +34,8 @@
 * SCSS
 * BOOTSTRAP
 * NODE JS
-* EXPRESS
+* EXPRESS.JS
+* SOCKET.IO
 * HANDLEBARS (HBS)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
