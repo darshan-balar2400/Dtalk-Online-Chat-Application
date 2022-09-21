@@ -45,7 +45,7 @@
 <!-- CONTACT -->
 ## Contact
 
-Your Name - Darshan Balar - balardarshan40@gmail.com
+Darshan Balar - balardarshan40@gmail.com
 
 Project Link: (https://github.com/darshan-balar2400/Dtalk-Online-Chat-Application
 
