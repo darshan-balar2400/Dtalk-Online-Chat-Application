@@ -1,17 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/index.css" rel="stylesheet">
-    <title>Document</title>
+    <title>DTalk - Let's Chat Privately</title>
+    <meta name="descrption"
+        content="DTalk is an web application which allows users to do privately chat with his friends and groups">
+    <meta name="keywords" content="chat,group chat,private chat,community chat">
+    <meta name="author" content="darshan balar">
+
+    <link rel="shortcut icon" type="image/png"
+        href="https://res.cloudinary.com/dexratgkq/image/upload/v1688192679/rzkerjaul1qkcsbxl5yl.png">
+
+    <meta itemprop="name" content="DTalk - Let's Chat Privately" />
+    <meta itemprop="description"
+        content="DTalk is an web application which allows users to do privately chat with his friends and groups" />
+    <meta itemprop="image"
+        content="https://res.cloudinary.com/dexratgkq/image/upload/v1688192679/rzkerjaul1qkcsbxl5yl.png" />
+
+    <meta property="og:title" content="DTalk - Let's Chat Privately" />
+    <meta property="og:description"
+        content="DTalk is an web application which allows users to do privately chat with his friends and groups" />
+    <meta property="og:type" content="website" />
+
+    <meta property="og:image"
+        content="https://res.cloudinary.com/dexratgkq/image/upload/v1688192679/rzkerjaul1qkcsbxl5yl.png" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="DTalk - Let's Chat Privately" />
+    <meta property="twitter:description"
+        content="DTalk is an web application which allows users to do privately chat with his friends and groups" />
+
+    <meta property="twitter:type" content="website" } />
+    <meta name="twitter:image:alt" content="Dtalk-Logo">
+    </meta>
+
 </head>
+
 <body>
     <div class="chat__aside_small_size">
     </div>
     <div class="chat__container">
-        <button class="openChatAside" onclick="openChatAside();"><ion-icon name="chevron-forward-outline"></ion-icon></button>
+        <button class="openChatAside" onclick="openChatAside();"><ion-icon
+                name="chevron-forward-outline"></ion-icon></button>
         <div class="chat__aside">
         </div>
         <div class="chat__content">
@@ -19,20 +53,26 @@
             </div>
             <div class="chat__sendMessage">
                 <form id="submitMessage">
-                    <input type="text" name="sendMessage" class="sendMessageInput" placeholder="Send Message" required autocomplete="off">
-                    <span class="attachement"><ion-icon name="attach-outline"></ion-icon></span>
+                    <input type="text" name="sendMessage" class="sendMessageInput" placeholder="Send Message" required
+                        autocomplete="off">
+                    <span class="attachement">
+                        <ion-icon name="attach-outline"></ion-icon>
+                        
+                        <div class="options">
+                            <span id="sendLocation"><ion-icon name="location-outline"></ion-icon> Send Location</span>
+                            <span><ion-icon name="image-outline"></ion-icon> Image</span>
+                            <span><ion-icon name="document-text-outline"></ion-icon>Document</span>
+                        </div>
+
+                    </span>
                     <button>Send</button>
                 </form>
 
-                <div class="options">
-                    <span id="sendLocation"><ion-icon name="location-outline"></ion-icon> Send Location</span>
-                    <span><ion-icon name="image-outline"></ion-icon> Image</span>
-                    <span><ion-icon name="document-text-outline"></ion-icon>Document</span>
-                </div>
+                
             </div>
         </div>
     </div>
-    
+
     <script type="text/html" id="message_template">
         <div class="msg {{class}}">
             <div class="title">
@@ -62,7 +102,7 @@
 
     <script type="text/html" id="users_template">
         <button class="closeChatAside" onclick="closeChatAside();"><ion-icon name="chevron-back-outline"></ion-icon></button>
-        <div class="title">
+        <div class="title" id="title">
             {{title}}
         </div>
         <div class="users">
@@ -84,11 +124,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script>
-        $(function(){
-            $(".attachement").click(function(){
+        $(function () {
+            $(".attachement").click(function () {
                 $(".options").slideToggle(500);
             });
         });
     </script>
 </body>
+
 </html>

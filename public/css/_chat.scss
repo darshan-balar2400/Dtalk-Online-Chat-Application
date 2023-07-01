@@ -39,6 +39,7 @@
     font-size: 2rem;
     color: #EFEFEF;
     // margin-top: 1rem;
+    text-transform: capitalize;
     background-color: #3E445A;
 }
 
@@ -58,9 +59,10 @@
 
 
         &:hover {
-            background-color: #F7F7F7;
+            background-color: #FF6636;
             cursor: pointer;
-            color: uses.$main_color;
+            // color: uses.$main_color;
+            color:white;
             // font-size:1.8rem;
         }
     }
@@ -273,14 +275,15 @@
                 display: none;
                 width: auto;
                 position: absolute;
-                bottom: 100%;
-                left: 90%;
+                // top: 0%
+                bottom:10%;
+                // left: 90%;
                 background-color: white;
                 box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
                 // padding:1rem;
                 border-radius: 0.7rem;
                 font-size: 1.4rem;
-                z-index: 1;
+                z-index: 99;
                 // transition: all 0.5s;
 
                 span {
@@ -301,7 +304,7 @@
                 }
 
                 @media (max-width:768px) {
-                    left: 60%;
+                    bottom: 100%;
                 }
             }
 
