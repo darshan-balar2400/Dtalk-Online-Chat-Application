@@ -24,7 +24,7 @@ io.on("connection",(socket) => {
         }
 
         socket.join(user.room);
-        socket.emit("message",generateMessage("DTalk","Welcome to our chat Application !"));
+        socket.emit("message",generateMessage("DTalk","Welcome to our chat Application, Let's Chat Privately !"));
         socket.broadcast.to(user.room).emit("message",generateMessage(user.username,` ${user.username} Is Joined !`));
         
         io.to(user.room).emit("getAlllUser",{

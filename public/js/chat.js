@@ -7,6 +7,7 @@ const message_template = document.querySelector("#message_template").innerHTML;
 const location_template = document.querySelector("#location_template").innerHTML;
 const $submitMessageForm = document.getElementById("submitMessage");
 const $sendLocation = document.querySelector("#sendLocation");
+const $sendImages = document.querySelector("#sendImages");
 const users_template = document.querySelector("#users_template").innerHTML;
 const chat__aside = document.querySelector(".chat__aside");
 const chat__aside_small_size = document.querySelector('.chat__aside_small_size');
@@ -127,6 +128,12 @@ $sendLocation.addEventListener("click", () => {
         return console.sendLocationlog(err);
     });
 
+});
+
+$sendImages.addEventListener("click",() => {
+    $sendImage = document.getElementById("sendImage");
+    $sendImage.click();
+    
 });
 
 if(room == ""){
