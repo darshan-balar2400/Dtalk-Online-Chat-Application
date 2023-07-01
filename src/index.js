@@ -2,7 +2,7 @@ const app = require("./app");
 const http = require('http');
 const socket = require("socket.io");
 const Filter = require("bad-words");
-const {generateMessage,generateLocationMessage} = require("../src/util/generateMessage");
+const {generateMessage,generateLocationMessage, generateImageMessage} = require("../src/util/generateMessage");
 const {addUser,removeUser,getUser,getUserInRoom,getAllRooms} = require("../src/util/user");
 
 const server = http.createServer(app);
@@ -31,6 +31,7 @@ io.on("connection",(socket) => {
             room:user.room,
             users:getUserInRoom(user.room)
         });
+    
     });
 
     socket.on("sendMessage",(msg,callback) => {
@@ -50,6 +51,12 @@ io.on("connection",(socket) => {
         const user = getUser(socket.id);
 
         io.to(user.room).emit("locationMessage",generateLocationMessage(user.username,`https://google.com/maps?q=${data.latitude},${data.longitude}`))
+        callback();
+    });
+    
+    socket.on('sendImage',(data,callback) => {
+        const user = getUser(socket.id);
+        io.to(user.room).emit("imageMessage",generateImageMessage(user.username,`${data}`))
         callback();
     });
 

@@ -5,6 +5,7 @@ const messages = document.querySelector(".chat__messages");
 const $inputValue = document.querySelector(".sendMessageInput");
 const message_template = document.querySelector("#message_template").innerHTML;
 const location_template = document.querySelector("#location_template").innerHTML;
+const image_template = document.querySelector("#image_template").innerHTML;
 const $submitMessageForm = document.getElementById("submitMessage");
 const $sendLocation = document.querySelector("#sendLocation");
 const $sendImages = document.querySelector("#sendImages");
@@ -12,7 +13,7 @@ const users_template = document.querySelector("#users_template").innerHTML;
 const chat__aside = document.querySelector(".chat__aside");
 const chat__aside_small_size = document.querySelector('.chat__aside_small_size');
 const allActiveRooms = document.querySelector(".allActiveRooms");
-
+const $sendImage = document.getElementById("sendImage");
 
 // get data from the query
 const queryData = new URLSearchParams(window.location.search);
@@ -68,6 +69,23 @@ socket.on("locationMessage", (msg) => {
 
     messages.innerHTML += html;
 
+    autoScroll();
+
+});
+
+socket.on("imageMessage", (msg) => {
+
+    const html = Mustache.render(image_template, {
+        class: checkUser(msg.username),
+        message: msg.url,
+        username: msg.username,
+        createdAt: moment(msg.createdAt).format("h:mm a")
+    });
+
+    messages.innerHTML += html;
+
+    autoScroll();
+
 });
 
 socket.on("getAlllUser", ({ room, users }) => {
@@ -115,7 +133,7 @@ $sendLocation.addEventListener("click", () => {
     $sendLocation.style.opacity = "0.6";
 
     navigator.geolocation.getCurrentPosition((position) => {
-        console.log(position);
+        
         data.latitude = position.coords.latitude;
         data.longitude = position.coords.longitude;
 
@@ -130,10 +148,22 @@ $sendLocation.addEventListener("click", () => {
 
 });
 
-$sendImages.addEventListener("click",() => {
-    $sendImage = document.getElementById("sendImage");
-    $sendImage.click();
+
+$sendImage.addEventListener("change",(e) => {
     
+    let url = URL.createObjectURL(e.target.files[0]);
+
+    console.log(url);
+    socket.emit("sendImage", url, (err) => {
+        if (err) {
+            return console.log(err);
+        }
+    });
+
+});
+
+$sendImages.addEventListener("click",(e) => {
+    $sendImage.click();
 });
 
 if(room == ""){

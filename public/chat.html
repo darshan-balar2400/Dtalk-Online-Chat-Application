@@ -59,7 +59,7 @@
                         <ion-icon name="attach-outline"></ion-icon>
                         
                         <div class="options">
-                            <span id="sendLocation"><ion-icon name="location-outline"></ion-icon> Send Location</span>
+                            <span id="sendLocation"><ion-icon name="location-outline"></ion-icon> Live Location</span>
                             <span id="sendImages"><ion-icon name="image-outline"></ion-icon> Image</span>
                             <input type="file" id="sendImage" name="sendImage" hidden/>
                             <span><ion-icon name="document-text-outline"></ion-icon>Document</span>
@@ -74,6 +74,20 @@
         </div>
     </div>
 
+    <!-- model of show image -->
+    <div class="img_model" id="img_model">
+        <div class="img_model_dialog">
+            <div class="img_model_content">
+                <div class="img_model_title">
+                    <span onclick="closeImg()" class="close_icon"><ion-icon name="close-circle-outline"></ion-icon></span>
+                </div>
+                <div class="img_model_body">
+                    <img src="#" alt="img" id="show_img">
+                </div>
+            </div>  
+        </div>
+    </div>
+
     <script type="text/html" id="message_template">
         <div class="msg {{class}}">
             <div class="title">
@@ -82,6 +96,20 @@
             </div>
             <div class="border"></div>
             <div class="body">{{message}}</div>
+        </div>
+    </script>
+
+    <script type="text/html" id="image_template">
+        <div class="msg {{class}}">
+            <div class="title">
+                <span>{{username}}</span>
+                <span class="time">{{createdAt}}</span>
+            </div>
+            <div class="border"></div>
+            <div class="body">
+                <!-- {{message}} -->
+                <img src="{{message}}" class="message_image" onclick="showImage(this)">
+            </div>
         </div>
     </script>
 
@@ -115,6 +143,8 @@
         </div>
     </script>
 
+
+
     <script src="socket.io/socket.io.js"></script>
     <script src="js/chat.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
@@ -124,6 +154,23 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+    <script>
+
+        let img_model = document.getElementById("img_model");
+        function showImage(e){
+            // alert(e.target);
+            img_model.style.display = "block";
+
+            let img_model_img = document.getElementById("show_img");
+            console.log(img_model_img);
+            img_model_img.src = e.src;
+        }
+
+        function closeImg(){
+            img_model.style.display = "none";
+        }
+
+    </script>
     <script>
         $(function () {
             $(".attachement").click(function () {

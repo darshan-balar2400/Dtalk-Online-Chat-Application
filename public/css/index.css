@@ -37,6 +37,72 @@
   background-color: #3E445A;
 }
 
+.message_image {
+  width: 100%;
+  height: 100%;
+}
+
+.img_model {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 99;
+}
+.img_model .img_model_dialog {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img_model .img_model_content {
+  width: 100%;
+  height: 100%;
+  transform: scale(0, 0);
+  animation-name: zoom;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.2s;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes zoom {
+  100% {
+    transform: scale(1, 1);
+  }
+}
+.img_model .img_model_content .img_model_title {
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  font-size: 4rem;
+}
+.img_model .img_model_content .img_model_title .close_icon {
+  color: white;
+}
+.img_model .img_model_content .img_model_title .close_icon:hover {
+  color: #FF6636;
+  cursor: pointer;
+}
+.img_model .img_model_content .img_model_body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img_model .img_model_content .img_model_body img {
+  max-width: 70%;
+  max-height: 70%;
+  -o-object-position: center;
+     object-position: center;
+}
+
 .chat_aside_users ul li, .chat__container .chat__aside .users ul li, .chat__aside_small_size .users ul li {
   width: 100%;
   list-style-type: none;
